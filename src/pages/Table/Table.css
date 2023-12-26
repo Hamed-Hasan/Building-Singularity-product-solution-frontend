@@ -1,0 +1,71 @@
+/* Updated CSS code with more meaningful class names: blog-table, blog-tr, blog-td, blog-th */
+
+.blog-table {
+    border-spacing: 0 15px;
+  }
+  
+  i {
+    font-size: 1rem !important;
+  }
+  
+  .blog-table .blog-tr {
+    border-radius: 20px;
+  }
+  
+  .blog-table tr td:nth-child(n+5),
+  .blog-table tr th:nth-child(n+5) {
+    border-radius: 0 .625rem .625rem 0;
+  }
+  
+  .blog-table tr td:nth-child(1),
+  .blog-table tr th:nth-child(1) {
+    border-radius: .625rem 0 0 .625rem;
+  }
+  .border-separate {
+    border-collapse: none !important;
+}
+
+
+
+.css-efhinx {
+  background: #00000038 !important;
+}
+
+/* div:where(.swal2-container) .swal2-html-container {
+  color: white !important;
+}
+div:where(.swal2-container) h2:where(.swal2-title) {
+  color: white !important;
+} */
+
+div:where(.swal2-container) div:where(.swal2-popup) {
+  background: #0e0d0df3;
+  color: #d4d4d4;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+  background-color: #e99400;
+  color: #fff;
+}
+button.swal2-cancel.btn.btn-danger {
+  margin-right: 27px;
+}
+
+.css-1deqn4c {
+  background: transparent !important;
+}
+
+
+.table-bg{
+    background-color: #111827 !important;
+}
+.search-btn{
+  background-color: #e99400 !important;
+}
+
+
+.css-1p9duqc,.css-z7w78k {
+  border-bottom: 0 !important;
+}
+
+
