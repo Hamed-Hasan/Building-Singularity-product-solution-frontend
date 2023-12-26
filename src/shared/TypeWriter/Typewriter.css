@@ -1,0 +1,21 @@
+/* Default font size for larger screens */
+.typewriter-text {
+    /* color: #FFA001; */
+    font-weight: 700;
+    font-size: 3.2vw; /* Adjust as needed */
+  }
+  
+  /* Media query for tablets */
+  @media (max-width: 768px) {
+    .typewriter-text {
+      font-size: 4vw; /* Adjust as needed */
+    }
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 480px) {
+    .typewriter-text {
+      font-size: 6vw; /* Adjust as needed */
+    }
+  }
+  
