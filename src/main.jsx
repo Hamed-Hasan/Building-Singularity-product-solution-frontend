@@ -1,32 +1,32 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { QueryClient, QueryClientProvider } from 'react-query';
-import App from './App.jsx'
-import './index.css'
-import { ChakraProvider } from '@chakra-ui/react';
-import { Toaster } from 'react-hot-toast';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { router } from "./router";
+import { Provider } from "react-redux";
+import { RouterProvider } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
+import theme from "./theme/index.js";
+import { store } from "./redux/store.js";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from "redux-persist";
 
-
-const queryClient = new QueryClient();
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <QueryClientProvider client={queryClient}>
-  <React.StrictMode>
-  <ChakraProvider>
-      <App />
-    <Toaster
-      position="top-center"
-      toastOptions={{
-        success: {
-          style: {
-            background: '#1F2937',
-            color: 'white'
-          },
-        },
-      }}
-      reverseOrder={false}
-    />
-    </ChakraProvider>
-  </React.StrictMode>
-</QueryClientProvider>,
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+	<React.StrictMode>
+		<Provider store={store}>
+			<PersistGate persistor={persistStore(store)}>
+				<ChakraProvider
+					theme={theme}
+					toastOptions={{
+						defaultOptions: {
+							position: "top",
+							duration: 3000,
+							variant: "subtle",
+							containerStyle: { fontSize: 14 },
+						},
+					}}>
+					<RouterProvider router={router} />
+				</ChakraProvider>
+			</PersistGate>
+		</Provider>
+	</React.StrictMode>
+);
